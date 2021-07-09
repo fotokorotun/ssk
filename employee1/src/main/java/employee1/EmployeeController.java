@@ -8,24 +8,24 @@ package employee1;
 	import org.springframework.web.bind.annotation.RequestMapping;
 
 	@Controller
-	@RequestMapping("/employee")
-	public class EmployeeController {
+	@RequestMapping("/cliente")
+	public class ClientesController {
 		
 		@Autowired
-		EmployeeRepository employeeRepository;
+		EmployeeRepository clienteRepository;
 		
-		@RequestMapping("/allEmployees")
-		public String getAllEmployees(Model boxToView) {
+		@RequestMapping("/allClientes")
+		public String getAllClientes(Model boxToView) {
 			
 			
-			//System.out.println(employeeRepository.findAll());
-			boxToView.addAttribute("employeeListfromControllerAndDB", employeeRepository.findAll() );
+			//System.out.println(clienteRepository.findAll());
+			boxToView.addAttribute("clientesListfromControllerAndDB", clienteRepository.findAll() );
 			//boxToView.addAttribute("message", "hi from NORWAY");
 			//boxToView.addAttribute("smoker", true);
 			//boxToView.addAttribute("taxesIVA", 21.00);
 			
 			
-			return "employees.html";
+			return "cliente.html";
 		}
 
 	}
